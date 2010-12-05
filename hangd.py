@@ -25,13 +25,11 @@ class Hangman():
         return board
 
     def updateBoard(self, line):
-        if (line not in self.word):
-            self.bit_bucket.append(line)
-
         if (line in self.word):
             self.correct_guesses.append(line)
-
-
+        else:
+            self.bit_bucket.append(line)
+            
         # Change this to use enumerate()
         j = 0
         for i in self.word:
@@ -67,7 +65,6 @@ class Hangman():
                 retval = self.board
 
         return retval
-
 
 class HangProtocol(basic.LineReceiver):    
     def __init__(self):
