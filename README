@@ -2,7 +2,7 @@ This is a hangman clone written using Python's Twisted framework.
 
 Installation:
 
-  git://github.com/slaney/hangd-man.git
+  git clone git://github.com/slaney/hangd-man.git
 
 Playing:
 
