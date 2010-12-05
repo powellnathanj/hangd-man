@@ -1,3 +1,5 @@
+import random
+
 from twisted.application import service, internet
 from twisted.internet import protocol, reactor
 from twisted.protocols import basic
@@ -6,15 +8,15 @@ class Hangman():
     def __init__(self):
         self.newgame         = True
         self.solved          = False
-        self.guesses         = 10
+        self.guesses         = 20
         self.word            = self.getWord()
         self.board           = self.getInitialBoard()  
         self.bit_bucket      = list()
         self.correct_guesses = list()
 
-    # Need simple file i/o here
     def getWord(self):
-        return ['w', 'o', 'r', 'd']
+        w = open('words')        
+        return list(random.choice(w.readlines()).strip())
 
     # Change to handle spaces and hyphens
     def getInitialBoard(self):
