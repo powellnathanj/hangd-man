@@ -1,3 +1,19 @@
-This is a hangman clone written using the event driven framework Twisted.
+This is a hangman clone written using Python's Twisted framework.
 
-It needs cleaned up, but this is what I have so far.
+Installation:
+
+  git://github.com/slaney/hangd-man.git
+
+Playing:
+
+  In one terminal:
+    
+    cd hangd-man
+    twistd -n -y hangman.py
+
+  In a second terminal:
+
+    telnet 0 2323
+    Start guessing letters
+
+
