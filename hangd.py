@@ -21,7 +21,7 @@ class Hangman():
     def getInitialBoard(self):
         board = list()
         for i in self.word:
-            if i == '-' or i == " ":
+            if i in ['-', " "]:
                 board.append(i)
             else:
                 board.append("_")
