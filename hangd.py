@@ -18,12 +18,16 @@ class Hangman():
         w = open('words')        
         return list(random.choice(w.readlines()).strip())
 
-    # Change to handle spaces and hyphens
     def getInitialBoard(self):
         board = list()
-        for i in range(0, len(self.word)):
-            board.append("_")
-            
+        for i in self.word:
+            if i == '-':
+                board.append("-")
+            elif i == ' ':
+                board.append(" ")
+            else:
+                board.append("_")
+           
         return board
 
     def updateBoard(self, line):
@@ -32,12 +36,9 @@ class Hangman():
         else:
             self.bit_bucket.append(line)
             
-        # Change this to use enumerate()
-        j = 0
-        for i in self.word:
-            if i == line:
-                self.board[j] = i
-            j = j + 1
+        for i,j in enumerate(self.word):
+            if j == line:
+                self.board[i] = j
 
         if self.board == self.word:
             self.solved = True
