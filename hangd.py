@@ -56,14 +56,11 @@ class Hangman():
             retval = "Send one letter and one letter only.  Sheesh."
         else:
             if self.newgame:
-                self.guesses = self.guesses - 1
-                self.updateBoard(line)
                 self.newgame = False
-                retval = self.board
-            else:
-                self.guesses = self.guesses - 1
-                self.updateBoard(line)
-                retval = self.board
+
+            self.guesses = self.guesses - 1
+            self.updateBoard(line)
+            retval = self.board
 
         return retval
 
